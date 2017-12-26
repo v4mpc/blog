@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Profile;
 
 class ProfileController extends Controller
 {
@@ -13,7 +14,9 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        
+        $profiles=Profile::all();
+
+        return view('profile')->with('profiles',$profiles);
     }
 
     /**
@@ -23,7 +26,7 @@ class ProfileController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -57,6 +60,9 @@ class ProfileController extends Controller
     public function edit($id)
     {
         //
+
+
+        return view('editProfile');
     }
 
     /**
